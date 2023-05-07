@@ -4,6 +4,9 @@ import cv2
 
 cascade_path = pathlib.Path(cv2.__file__).parent.absolute() / "data/haarcascade_frontalface_alt2.xml"
 face_cascade = cv2.CascadeClassifier(str(cascade_path))
+recognizer = cv2.face.LBPHFaceRecognizer_create()
+recognizer.read("trainer.yml")
+
 cap = cv2.VideoCapture(0)
 
 while True:
@@ -15,6 +18,10 @@ while True:
     for (x, y, w, h) in faces:
         roi_gray = gray[y:y + h, x:x + w]
         roi_color = frame[y:y + h, x:x + w]
+
+        id_, conf = recognizer.predict(roi_gray)
+        if conf>=45 and conf<=85:
+            print(id_)
         img_item = "my-image.png"
         cv2.imwrite(img_item, roi_gray)
         color = (255, 0, 0)  # BGR:
