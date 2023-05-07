@@ -30,7 +30,7 @@ while True:
         if conf >= 45: # conf <= 85:
             print(id_)
             print(labels[id_])
-            font = cv2.FONT_HERSHEY_SIMPLEX
+            font = cv2.FONT_HERSHEY_SIMX
             name = labels[id_]
             color = (255, 255, 255)
             stroke = 2
