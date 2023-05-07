@@ -29,4 +29,4 @@ while True:
         break
 
 cap.release()
-cv2.destroyAllWindows() assdasd
+cv2.destroyAllWindows()  # Deneme Windows
