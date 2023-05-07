@@ -36,7 +36,7 @@ while True:
             stroke = 2
             cv2.putText(frame, name, (x, y), font, 1, color, stroke, cv2.LINE_AA)
 
-        img_item = "my-image.png"
+        img_item = "7.png"
         cv2.imwrite(img_item, roi_gray)
         color = (255, 0, 0)  # BGR:
         stroke = 2
