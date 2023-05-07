@@ -2,7 +2,7 @@ import pathlib
 import numpy as np
 import cv2
 
-cascade_path = pathlib.Path(cv2.__file__).parent.absolute() / "data/haarcascade_frontalface_default.xml"
+cascade_path = pathlib.Path(cv2.__file__).parent.absolute() / "data/haarcascade_frontalface_alt2.xml"
 face_cascade = cv2.CascadeClassifier(str(cascade_path))
 cap = cv2.VideoCapture(0)
 
@@ -29,4 +29,4 @@ while True:
         break
 
 cap.release()
-cv2.destroyAllWindows()  # Deneme Windows
+cv2.destroyAllWindows()
