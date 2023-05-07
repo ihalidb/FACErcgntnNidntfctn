@@ -2,8 +2,8 @@ import pathlib
 import numpy as np
 import cv2
 
-face_cascade = cv2.CascadeClassifier("venv/Lib/site-packages/cv2/data/haarcascade_frontalface_alt2.xml")
-
+cascade_path = pathlib.Path(cv2.__file__).parent.absolute() / "data/haarcascade_frontalface_default.xml"
+face_cascade = cv2.CascadeClassifier(str(cascade_path))
 cap = cv2.VideoCapture(0)
 
 while True:
