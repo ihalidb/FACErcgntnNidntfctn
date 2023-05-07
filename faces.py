@@ -9,7 +9,7 @@ recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read("trainer.yml")
 
 labels = {"person_name": 1}
-with open("labels.picle", 'rb') as f:
+with open("labels.pickle", 'rb') as f:
     og_labels = pickle.load(f)
     labels = {v:k for k, v in og_labels.items( )}
 
