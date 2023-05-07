@@ -31,7 +31,9 @@ for root, dirs, files in os.walk(image_dir):
             # y_labels.append(label)  #numaraları_kaydet
             # x_train.append(path)  #resimleri_onayla_ve_NUMPY_dizisine_çevir
             pil_image = Image.open(path).convert("L")  # gray scale
-            image_array = np.array(pil_image, "uint8")
+            size = (550, 550)
+            final_image = pil_image.resize(size, Image.ANTIALIAS)
+            image_array = np.array(final_image, "uint8")
             #print(image_array)
             faces = face_cascade.detectMultiScale(image_array, scaleFactor=1.5, minNeighbors=5)
 
