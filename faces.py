@@ -27,10 +27,10 @@ while True:
         roi_color = frame[y:y + h, x:x + w]
 
         id_, conf = recognizer.predict(roi_gray)
-        if conf >= 45: # conf <= 85:
+        if conf >= 45:# <= 100:
             print(id_)
             print(labels[id_])
-            font = cv2.FONT_HERSHEY_SIMX
+            font = cv2.FONT_HERSHEY_SIMPLEX
             name = labels[id_]
             color = (255, 255, 255)
             stroke = 2
