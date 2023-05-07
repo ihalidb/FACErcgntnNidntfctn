@@ -27,7 +27,7 @@ while True:
         roi_color = frame[y:y + h, x:x + w]
 
         id_, conf = recognizer.predict(roi_gray)
-        if 45 <= conf <= 85:
+        if 45 >= conf <= 85:
             print(id_)
             print(labels[id_])
 
