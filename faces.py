@@ -20,8 +20,9 @@ while True:
         roi_color = frame[y:y + h, x:x + w]
 
         id_, conf = recognizer.predict(roi_gray)
-        if conf>=45 and conf<=85:
+        if 45 <= conf <= 85:
             print(id_)
+
         img_item = "my-image.png"
         cv2.imwrite(img_item, roi_gray)
         color = (255, 0, 0)  # BGR:
